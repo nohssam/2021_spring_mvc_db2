@@ -60,13 +60,15 @@ public class MyController {
 				vo.setFile_name(file.getOriginalFilename());
 			}
 			int res = myService.insertGuestBook2(vo);
-			byte[] in = file.getBytes();
-			File out = new File(path, vo.getFile_name());
-			FileCopyUtils.copy(in, out);
+			if(vo.getFile_name() != "") {
+				byte[] in = file.getBytes();
+				File out = new File(path, vo.getFile_name());
+				FileCopyUtils.copy(in, out);
+			}
 			return new ModelAndView("redirect:list.do");
 		} catch (Exception e) {
 			System.out.println(e);
-			return new ModelAndView("redirect:list.do");
+			return new ModelAndView("redirect:write.do");
 		}
 	}
 	
