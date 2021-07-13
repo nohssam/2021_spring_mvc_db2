@@ -18,6 +18,10 @@
 	<delete id="delete" parameterType="String">
 		delete from guestbook2 where idx = #{idx}
 	</delete>
+	<update id="update" parameterType="com.ict.vo.VO">
+		update guestbook2 set name=#{name}, subject=#{subject}, content=#{content},
+		 email=#{email}, file_name=#{file_name} where idx = #{idx}
+	</update>
 </mapper>
 
 

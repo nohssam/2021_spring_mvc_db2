@@ -30,7 +30,6 @@ public class MyServiceImpl implements MyService{
 	}
 	@Override
 	public void updateGuestBook2(VO vo) throws Exception {
-		// TODO Auto-generated method stub
-		
+		myDAO.updateGuestBook2(vo);
 	}
 }

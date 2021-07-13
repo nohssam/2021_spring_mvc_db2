@@ -31,7 +31,6 @@ public class MyDAOImpl implements MyDAO{
 	}
 	@Override
 	public void updateGuestBook2(VO vo) throws Exception {
-		// TODO Auto-generated method stub
-		
+		sqlSessionTemplate.update("guestbook2.update", vo);
 	}
 }
